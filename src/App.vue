@@ -32,8 +32,10 @@ const showKey = computed(() => params.key === 'leiding');
 
 <style>
 body {
-  background: no-repeat fixed url(/topo.svg);
+  background: no-repeat fixed url(/topo.svg) #000;
   background-size: cover;
+  color: white;
+  background-attachment: fixed;
   color: white;
 }
 </style>
