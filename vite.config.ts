@@ -11,6 +11,9 @@ export default defineConfig({
     registerType: 'autoUpdate',
     workbox: {
       globPatterns: ['**/*.{js,css,html,png,svg}']
+    },
+    manifest: {
+      theme_color: '#000000'
     }
   })],
   resolve: {
