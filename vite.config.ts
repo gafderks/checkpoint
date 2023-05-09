@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [vue(), vueJsx(), VitePWA({
     registerType: 'autoUpdate',
     workbox: {
-      globPatterns: ['**/*.{js,css,html,png}']
+      globPatterns: ['**/*.{js,css,html,png,svg}']
     }
   })],
   resolve: {
