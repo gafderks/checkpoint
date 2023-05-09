@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { CollectableItem } from '@/stores/collectable';
-import { computed } from 'vue';
 import { useQRCode } from '@vueuse/integrations/useQRCode';
+import Flag from './Flag.vue';
 
 
 interface Props {
@@ -14,10 +14,6 @@ const props = withDefaults(defineProps<Props>(),
         showQrKey: false,
     }
 );
-
-const fullUrl = computed(() => {
-    return import.meta.env.BASE_URL + 'img/' + props.value.imageUrl
-})
 
 const pageUrl = new URL(window.location.href);
 pageUrl.hash = '';
@@ -32,7 +28,7 @@ const qrcode = useQRCode(`${pageUrl}#found=${props.value.key}`);
                 <img :src="qrcode" alt="QR code" />
             </div>
             <div class="img-container">
-                <img :src="fullUrl" />
+                <Flag :text="value.iconText" :color="value.flagColor" :text-color="value.textColor" />
             </div>
             <div class="card-body d-print-none">
                 <h5 class="card-title">{{ value.name }}</h5>
@@ -63,7 +59,7 @@ const qrcode = useQRCode(`${pageUrl}#found=${props.value.key}`);
         text-align: center;
         margin: 0 auto;
 
-        img {
+        svg {
             filter: brightness(0.05) var(--shadow);
             user-select: none;
             pointer-events: none;
@@ -91,7 +87,7 @@ const qrcode = useQRCode(`${pageUrl}#found=${props.value.key}`);
 
     &.found,
     &.key {
-        .img-container img {
+        .img-container svg {
             filter: var(--shadow);
         }
 

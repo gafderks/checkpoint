@@ -13,7 +13,7 @@ const showKey = computed(() => params.key === 'leiding');
 <template>
   <div class="container">
     <header class="d-print-none">
-      <h1 class="display-1">DEX</h1>
+      <h1 class="display-1">Checkpoint</h1>
       <p class="lead">
         {{ store.foundItems.size }} van {{ store.items.length }} gevonden!
         <a href="#" class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
@@ -32,6 +32,8 @@ const showKey = computed(() => params.key === 'leiding');
 
 <style>
 body {
-  background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+  background: no-repeat fixed url(img/topo.svg);
+  background-size: cover;
+  color: white;
 }
 </style>

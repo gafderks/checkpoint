@@ -48,3 +48,8 @@ watch(code, () => {
         </div>
     </div>
 </template>
+<style lang="scss" scoped>
+.card {
+    background: black;
+}
+</style>

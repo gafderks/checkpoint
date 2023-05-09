@@ -1,18 +1,20 @@
 import { ref, computed, watchEffect, watch } from 'vue'
 import { defineStore } from 'pinia'
 import { useUrlSearchParams, useLocalStorage } from '@vueuse/core';
-import pokemon from './pokemon.json';
+import checkpoints from './checkpoints.json';
 
 export interface CollectableItem {
   key: string;
-  imageUrl: string;
+  iconText: string;
+  textColor: string;
+  flagColor: string;
   name: string;
   found: boolean;
 }
 
 export const useCollectableStore = defineStore('collectable', () => {
 
-  const inventory: Omit<CollectableItem, "found">[] = pokemon.map(item => {
+  const inventory: Omit<CollectableItem, "found">[] = checkpoints.map(item => {
     return {
       ...item,
       key: item.key.toUpperCase()
