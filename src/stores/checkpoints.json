@@ -12,5 +12,12 @@
         "iconText": "2",
         "textColor": "black",
         "flagColor": "#dc6969"
+    },
+    {
+        "key": "yq28kp",
+        "name": "De Binck",
+        "iconText": "3",
+        "textColor": "black",
+        "flagColor": "#69abdc"
     }
 ]
